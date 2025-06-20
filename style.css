@@ -1,0 +1,480 @@
+@font-face {
+  font-family: 'Bornomala';
+  src: url('Bornomala.ttf');
+}
+
+body {
+ margin: 0;
+  padding: 0;
+  background: #f7f7f7;
+}
+
+/* ✅ কার্ড ১ ফিক্সড */
+.card1 {
+  position: sticky;
+  top: 10px;
+  z-index: 100;
+  border-radius: 30px;
+  background: #fff;
+  padding: 16px;
+  margin: 12px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+/* ✅ Card 2 এর জন্য আলাদা স্টাইল */
+.card2 {
+  border-radius: 30px;
+  padding: 20px;
+  background: #fff;
+  box-sizing: border-box;
+  margin: 30px 30px 0px 30px;
+
+
+}
+
+.card1 {
+  border: 1px solid #999;
+  border-radius: 40px;
+}
+
+.card2 {
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1px;
+  flex-wrap: wrap;
+}
+
+.tab {
+  display: flex;
+  justify-content: center;
+  background: #f1f1f1;
+  border-radius: 30px;
+  overflow: hidden;
+  width: 250px;  /* স্ক্রিনশট এর অনুরূপ width */
+  height: 48px;  /* ফিক্সড উচ্চতা */
+  margin: 0 auto 20px;
+  padding: 4px;
+}
+
+.tab div {
+  flex: 1;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 30px;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease;
+}
+
+.tab .active {
+  background: #2396F2;
+  color: white;
+}
+
+.row {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* ✅ Card 1 এর ভিতরের .row div জন্য */
+.card1 .row div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 26px; /* আলাদা ফন্ট সাইজ */
+  margin: 10px;
+  min-width: 70px;
+  line-height: 1.4;
+}
+
+/* ✅ Card 2 এর ভিতরের .row div জন্য */
+.card2 .row div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 20px; /* আলাদা ফন্ট সাইজ */
+  margin: 10px;
+  min-width: 70px;
+  line-height: 1.4;
+}
+
+.green { color: #4DB050; }
+.red { color: #F44136; }
+.brown { color: #8E4000; }
+.blue { color: #2396F2; }
+
+.add-button {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #4DB050;
+  color: white;
+  font-size: 48px;
+  text-align: center;
+  line-height: 70px;
+  cursor: pointer;
+  display: none;
+  z-index: 1000;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  width: 92%;
+  max-width: 380px;
+  padding: 24px 20px;
+  border-radius: 24px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  display: none;
+  z-index: 2000;
+  transition: all 0.3s ease;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
+  border: 1px solid #ddd;
+  border-radius: 14px;
+  padding: 10px 14px;
+  background: #f9f9f9;
+  transition: border 0.2s;
+}
+
+.input-group input,
+.input-group textarea {
+  border: none;
+  outline: none;
+  background: transparent;
+  flex: 1;
+  font-size: 15px;
+  margin-left: 10px;
+  font-family: inherit;
+  color: #333;
+}
+
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+  color: #aaa;
+}
+
+.input-group img {
+  width: 20px;
+  height: 20px;
+  opacity: 0.4;
+}
+
+/* Focus effect (optional) */
+.input-group:focus-within {
+  border-color: #28a745;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  gap: 12px;
+}
+
+.buttons button {
+  flex: 1;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.cancel {
+  background: #eeeeee;
+  color: #333;
+}
+
+.submit {
+  background: #28a745;
+  color: white;
+}
+
+.submit:hover {
+  background: #22963d;
+}
+
+.cancel:hover {
+  background: #ddd;
+}
+
+.product-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  margin: 15px 30px 0px 30px;  
+  padding: 0 16px;
+  background: #e9fcef;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 12px;
+  border-bottom: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.product-header div {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 6px;
+  font-size: 17px;
+  text-align: center;
+  box-sizing: border-box;
+  white-space: normal;
+}
+
+.product-header div:nth-child(1),
+.product-entry div:nth-child(1) {
+  flex: 2;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.product-header div:last-child {
+  flex: 0.7;
+  justify-content: flex-end;
+  text-align: right;
+  padding-right: 12px;
+}
+
+.product-entry {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  margin: 0 35px;
+  padding: 0 16px;
+  background: #fff;
+  font-size: 15px;
+  border-bottom: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.product-entry div {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 6px;
+  font-size: 15.5px;
+  text-align: center;
+  box-sizing: border-box;
+  white-space: normal;
+}
+
+.product-header div:nth-child(5),
+.product-entry div:nth-child(5) {
+  flex: 2;
+  justify-content: center;
+  text-align: center;
+}
+
+.product-entry div:nth-child(4) {
+  color: #8E4000;
+}
+
+.product-entry div:last-child {
+  flex: 0.7;
+  justify-content: flex-end;
+  text-align: right;
+  padding-right: 12px;
+}
+
+.toggle-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-20px); /* ✅ নিচ থেকে উঠছে */
+  transition: all 0.4s ease;
+  transform-origin: top;
+}
+
+.toggle-content.active {
+  max-height: 2000px;
+  opacity: 1;
+  transform: translateY(0); /* ✅ নিচ থেকে বের হয়ে এল */
+}
+
+/* ✅ Header Section - প্রশস্ত এবং বড় আইকনসহ */
+.header {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  padding: 18px 20px; /* আগের চেয়ে একটু বেশি */
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 999;
+}
+
+/* লোগো এরিয়া */
+.logo-area {
+  display: flex;
+  align-items: center;
+  font-size: 20px; /* টেক্সট একটু বড় */
+  font-weight: bold;
+  color: #2e7dff;
+}
+
+.logo-area i {
+  font-size: 28px; /* আইকন বড় */
+  margin-right: 10px;
+}
+
+/* আইকন এরিয়া */
+.icon-area {
+  display: flex;
+  align-items: center;
+  gap: 24px; /* একটু বেশি জায়গা */
+}
+
+/* আইকন বাটন */
+.icon-btn {
+  position: relative;
+  font-size: 24px; /* আইকন সাইজ 🔥 */
+  color: #111;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.icon-btn:hover {
+  color: #2e7dff;
+}
+
+/* নোটিফিকেশন ব্যাজ */
+.icon-btn .badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: #2e7dff;
+  color: #fff;
+  font-size: 12px;
+  padding: 2px 7px;
+  border-radius: 50%;
+  font-weight: bold;
+}
+/* 🌙 ডার্ক মোড স্টাইল */
+body.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+/* কার্ড গুলো কালো ব্যাকগ্রাউন্ড */
+body.dark-mode .card1,
+body.dark-mode .card2,
+body.dark-mode .popup,
+body.dark-mode .product-entry,
+body.dark-mode .product-header {
+  background-color: #1e1e1e;
+  color: #fff;
+  border-color: #444;
+}
+
+/* নেভ হেডার */
+body.dark-mode .header {
+  background-color: #1e1e1e;
+  box-shadow: none;
+}
+
+/* ইনপুট ফিল্ড */
+body.dark-mode input,
+body.dark-mode textarea {
+  background: #2a2a2a;
+  color: white;
+}
+
+/* আইকনের কালার হালকা */
+body.dark-mode .icon-btn i {
+  color: #f0f0f0;
+}
+body.dark-mode .popup {
+  background-color: #1f1f1f;
+  color: #f0f0f0;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+body.dark-mode .input-group {
+  background-color: #2a2a2a;
+  border: 1px solid #3a3a3a;
+  border-radius: 14px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+body.dark-mode .input-group input,
+body.dark-mode .input-group textarea {
+  background: transparent;
+  color: #f5f5f5;
+  font-size: 15px;
+}
+
+body.dark-mode .input-group input::placeholder,
+body.dark-mode .input-group textarea::placeholder {
+  color: #aaa;
+  opacity: 0.8;
+}
+
+/* আইকন গুলো নরম করে দেওয়া */
+body.dark-mode .input-group img {
+  filter: brightness(0.85);
+  opacity: 0.8;
+}
+
+/* বাটন স্মুথ লুক */
+body.dark-mode .buttons .cancel {
+  background-color: #333;
+  color: #ccc;
+  border: 1px solid #444;
+  transition: background 0.3s ease;
+}
+
+body.dark-mode .buttons .submit {
+  background-color: #28a745;
+  color: #fff;
+  transition: background 0.3s ease;
+}
+
+body.dark-mode .buttons .submit:hover {
+  background-color: #22963d;
+}
+
+/* ফোকাস/ইনপুট highlight */
+body.dark-mode .input-group:focus-within {
+  border-color: #4DB050;
+  background-color: #2d2d2d;
+}
